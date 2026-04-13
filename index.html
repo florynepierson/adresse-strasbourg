@@ -1,477 +1,286 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>L'Adresse Strasbourg — L'immobilier coopératif</title>
+  <meta name="description" content="Agence immobilière l'Adresse à Strasbourg, spécialisée en estimation et vente de biens. Estimation gratuite. 5★ sur Google. 22 rue d'Ypres, 67000 Strasbourg."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --teal:       #2ab5b5;
-      --teal-dark:  #1e9494;
-      --teal-deep:  #187878;
-      --teal-light: #d6f0f0;
-      --teal-pale:  #edf8f8;
-      --white:      #ffffff;
-      --off-white:  #f7fafa;
-      --text:       #1a2e2e;
-      --muted:      #5a7878;
-      --green-wa:   #25D366;
+      --teal:      #2ab5b5;
+      --teal-dark: #1e9494;
+      --teal-light:#d6f0f0;
+      --teal-pale: #edf8f8;
+      --white:     #ffffff;
+      --off-white: #f7fafa;
+      --text:      #1a2e2e;
+      --muted:     #5a7878;
+      --green-wa:  #25D366;
     }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--white);
-      color: var(--text);
-      font-family: 'Nunito Sans', sans-serif;
-      font-weight: 400;
-      overflow-x: hidden;
-    }
+    body { background: var(--white); color: var(--text); font-family: 'Nunito Sans', sans-serif; font-weight: 400; overflow-x: hidden; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 3rem; height: 68px;
       background: var(--white);
       box-shadow: 0 2px 16px rgba(42,181,181,0.12);
-      transition: height 0.3s ease, box-shadow 0.3s ease;
+      transition: height 0.3s, box-shadow 0.3s;
     }
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a {
-      text-decoration: none; color: var(--muted);
-      font-size: 0.88rem; font-weight: 600; transition: color 0.2s;
-    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 600; transition: color 0.2s; }
     .nav-links a:hover { color: var(--teal); }
-    .nav-cta {
-      background: var(--teal) !important; color: var(--white) !important;
-      padding: 0.55rem 1.4rem; border-radius: 50px; font-weight: 700 !important;
-      transition: background 0.2s !important;
-    }
+    .nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 0.5rem 1.3rem; border-radius: 50px; font-weight: 700 !important; transition: background 0.2s !important; }
     .nav-cta:hover { background: var(--teal-dark) !important; }
 
-    /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
-      padding-top: 68px; overflow: hidden;
-    }
+    /* ── HERO ── */
+    #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 68px; overflow: hidden; }
     .hero-left {
-      background: var(--teal);
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5rem 4rem 5rem 5rem;
-      position: relative; overflow: hidden;
+      background: var(--teal); display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 5rem; position: relative; overflow: hidden;
     }
-    .hero-left::before {
-      content: ''; position: absolute; bottom: -80px; left: -80px;
-      width: 320px; height: 320px; border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-    }
-    .hero-left::after {
-      content: ''; position: absolute; top: -60px; right: -60px;
-      width: 220px; height: 220px; border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-    }
-    .hero-label {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(255,255,255,0.18); color: var(--white);
-      border-radius: 50px; padding: 0.4rem 1.1rem;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
-      text-transform: uppercase; margin-bottom: 2rem; width: fit-content;
-      animation: fadeUp 0.7s ease both;
-    }
-    .hero-title {
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 800;
-      line-height: 1.15; color: var(--white);
-      animation: fadeUp 0.7s 0.1s ease both;
-    }
-    .hero-title em { font-style: italic; font-weight: 300; display: block; }
-    .hero-sub {
-      margin-top: 1.5rem;
-      font-size: 1rem; color: rgba(255,255,255,0.85);
-      line-height: 1.75; max-width: 440px;
-      animation: fadeUp 0.7s 0.2s ease both;
-    }
-    .hero-rating {
-      margin-top: 2rem;
-      display: inline-flex; align-items: center; gap: 0.8rem;
-      background: rgba(255,255,255,0.15); border-radius: 12px;
-      padding: 0.8rem 1.2rem; width: fit-content;
-      animation: fadeUp 0.7s 0.3s ease both;
-    }
-    .hero-rating .stars { color: #FFD700; font-size: 1rem; }
-    .hero-rating p { font-size: 0.85rem; color: var(--white); font-weight: 600; }
-    .hero-rating p span { font-weight: 300; opacity: 0.8; }
-    .hero-btns {
-      margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;
-      animation: fadeUp 0.7s 0.4s ease both;
-    }
-    .btn-white {
-      background: var(--white); color: var(--teal);
-      padding: 0.9rem 2rem; text-decoration: none;
-      font-size: 0.88rem; font-weight: 700; border-radius: 50px;
-      border: 2px solid var(--white); transition: all 0.25s;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-    }
-    .btn-white:hover { background: transparent; color: var(--white); }
-    .btn-wa {
-      background: var(--green-wa); color: #fff;
-      padding: 0.9rem 2rem; text-decoration: none;
-      font-size: 0.88rem; font-weight: 700; border-radius: 50px;
-      border: 2px solid var(--green-wa); transition: all 0.25s;
-      display: inline-flex; align-items: center; gap: 0.6rem;
-    }
-    .btn-wa:hover { background: transparent; color: var(--green-wa); }
+    .hero-left::before { content:''; position:absolute; bottom:-80px; left:-80px; width:320px; height:320px; border-radius:50%; background:rgba(255,255,255,0.08); }
+    .hero-left::after  { content:''; position:absolute; top:-60px; right:-60px; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,0.06); }
+    .hero-label { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.18); color:var(--white); border-radius:50px; padding:0.4rem 1.1rem; font-size:0.78rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:2rem; width:fit-content; animation:fadeUp 0.7s ease both; }
+    .hero-title { font-family:'Nunito',sans-serif; font-size:clamp(2.2rem,3.8vw,3.8rem); font-weight:800; line-height:1.15; color:var(--white); animation:fadeUp 0.7s 0.1s ease both; }
+    .hero-title em { font-style:italic; font-weight:300; display:block; }
+    .hero-sub { margin-top:1.5rem; font-size:0.97rem; color:rgba(255,255,255,0.85); line-height:1.75; max-width:440px; animation:fadeUp 0.7s 0.2s ease both; }
+    .hero-rating { margin-top:2rem; display:inline-flex; align-items:center; gap:0.8rem; background:rgba(255,255,255,0.15); border-radius:12px; padding:0.8rem 1.2rem; width:fit-content; animation:fadeUp 0.7s 0.3s ease both; }
+    .hero-rating .stars { color:#FFD700; font-size:1rem; }
+    .hero-rating p { font-size:0.85rem; color:var(--white); font-weight:600; }
+    .hero-rating p span { font-weight:300; opacity:0.8; }
+    .hero-btns { margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; animation:fadeUp 0.7s 0.4s ease both; }
+    .btn-white { background:var(--white); color:var(--teal); padding:0.9rem 2rem; text-decoration:none; font-size:0.88rem; font-weight:700; border-radius:50px; border:2px solid var(--white); transition:all 0.25s; display:inline-flex; align-items:center; gap:0.5rem; }
+    .btn-white:hover { background:transparent; color:var(--white); }
+    .btn-wa { background:var(--green-wa); color:#fff; padding:0.9rem 2rem; text-decoration:none; font-size:0.88rem; font-weight:700; border-radius:50px; border:2px solid var(--green-wa); transition:all 0.25s; display:inline-flex; align-items:center; gap:0.6rem; }
+    .btn-wa:hover { background:transparent; color:var(--green-wa); }
+    .hero-right { position:relative; overflow:hidden; background:#cce8e8; }
+    .hero-mosaic { position:absolute; inset:0; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:3px; }
+    .hero-mosaic img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .hero-mosaic img:hover { transform:scale(1.04); }
+    .hero-mosaic .span2 { grid-column:1/3; }
+    .hero-badge { position:absolute; bottom:1.5rem; right:1.5rem; background:var(--white); border-radius:16px; padding:1rem 1.4rem; text-align:center; box-shadow:0 8px 32px rgba(0,0,0,0.12); }
+    .hero-badge .score { font-family:'Nunito',sans-serif; font-size:2rem; font-weight:800; color:var(--teal); line-height:1; }
+    .hero-badge .g-stars { color:#FFD700; font-size:0.85rem; }
+    .hero-badge p { font-size:0.72rem; color:var(--muted); margin-top:0.2rem; font-weight:600; }
 
-    .hero-right { position: relative; overflow: hidden; background: #cce8e8; }
-    .hero-mosaic {
-      position: absolute; inset: 0;
-      display: grid; grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr; gap: 3px;
-    }
-    .hero-mosaic img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-    .hero-mosaic img:hover { transform: scale(1.04); }
-    .hero-mosaic .span2 { grid-column: 1/3; }
-    .hero-badge {
-      position: absolute; bottom: 1.5rem; right: 1.5rem;
-      background: var(--white); border-radius: 16px;
-      padding: 1rem 1.4rem; text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    }
-    .hero-badge .score {
-      font-family: 'Nunito', sans-serif;
-      font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1;
-    }
-    .hero-badge .g-stars { color: #FFD700; font-size: 0.85rem; }
-    .hero-badge p { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; font-weight: 600; }
+    /* ── STATS ── */
+    #stats { background:var(--teal-pale); padding:3rem 5rem; display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; border-top:3px solid var(--teal-light); }
+    .stat-item { text-align:center; }
+    .stat-item .num { font-family:'Nunito',sans-serif; font-size:2.8rem; font-weight:800; color:var(--teal); line-height:1; }
+    .stat-item .lbl { font-size:0.8rem; color:var(--muted); font-weight:600; margin-top:0.3rem; text-transform:uppercase; letter-spacing:0.05em; }
 
-    /* STATS */
-    #stats {
-      background: var(--teal-pale);
-      padding: 3rem 5rem;
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem;
-      border-top: 3px solid var(--teal-light);
-    }
-    .stat-item { text-align: center; }
-    .stat-item .num {
-      font-family: 'Nunito', sans-serif;
-      font-size: 2.8rem; font-weight: 800; color: var(--teal); line-height: 1;
-    }
-    .stat-item .lbl {
-      font-size: 0.82rem; color: var(--muted); font-weight: 600;
-      margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em;
-    }
+    /* ── COMMON ── */
+    section { padding:6rem 5rem; }
+    .section-label { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.8rem; }
+    .section-label::before { content:''; display:inline-block; width:24px; height:3px; background:var(--teal); border-radius:2px; }
+    .section-title { font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:800; line-height:1.2; color:var(--text); }
+    .section-title em { font-style:italic; font-weight:300; color:var(--teal); }
 
-    /* SECTIONS */
-    section { padding: 6rem 5rem; }
-    .section-label {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--teal); margin-bottom: 0.8rem;
-    }
-    .section-label::before {
-      content: ''; display: inline-block;
-      width: 24px; height: 3px; background: var(--teal); border-radius: 2px;
-    }
-    .section-title {
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 800; line-height: 1.2; color: var(--text);
-    }
-    .section-title em { font-style: italic; font-weight: 300; color: var(--teal); }
+    /* ── À PROPOS ── */
+    #apropos { background:var(--white); display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .apropos-text p { color:var(--muted); line-height:1.85; margin-top:1.4rem; font-size:0.97rem; }
+    .coop-badge { margin-top:2rem; display:inline-flex; align-items:center; gap:0.8rem; background:var(--teal-pale); border-radius:12px; padding:0.9rem 1.4rem; border-left:4px solid var(--teal); }
+    .coop-badge p { font-size:0.85rem; color:var(--muted); font-weight:600; }
+    .coop-badge p strong { color:var(--teal); }
+    .valeurs { margin-top:2rem; display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; }
+    .valeur-item { display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--muted); font-weight:600; }
+    .valeur-item::before { content:'▸'; color:var(--teal); font-size:0.8rem; }
+    .apropos-img { position:relative; }
+    .apropos-img img { width:100%; height:460px; object-fit:cover; border-radius:24px; }
+    .apropos-img .img-badge { position:absolute; top:-16px; right:-16px; background:var(--teal); color:var(--white); border-radius:16px; padding:1.2rem 1.5rem; text-align:center; box-shadow:0 8px 24px rgba(42,181,181,0.35); }
+    .apropos-img .img-badge .big { font-family:'Nunito',sans-serif; font-size:2.2rem; font-weight:800; line-height:1; }
+    .apropos-img .img-badge p { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-top:0.2rem; opacity:0.85; }
 
-    /* APROPOS */
-    #apropos {
-      background: var(--white);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-    }
-    .apropos-text p {
-      color: var(--muted); line-height: 1.85; margin-top: 1.4rem; font-size: 0.97rem;
-    }
-    .coop-badge {
-      margin-top: 2rem;
-      display: inline-flex; align-items: center; gap: 0.8rem;
-      background: var(--teal-pale); border-radius: 12px;
-      padding: 0.9rem 1.4rem; border-left: 4px solid var(--teal);
-    }
-    .coop-badge p { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
-    .coop-badge p strong { color: var(--teal); }
-    .apropos-img { position: relative; }
-    .apropos-img img {
-      width: 100%; height: 460px; object-fit: cover; border-radius: 24px;
-    }
-    .apropos-img .img-badge {
-      position: absolute; top: -16px; right: -16px;
-      background: var(--teal); color: var(--white);
-      border-radius: 16px; padding: 1.2rem 1.5rem; text-align: center;
-      box-shadow: 0 8px 24px rgba(42,181,181,0.35);
-    }
-    .apropos-img .img-badge .big {
-      font-family: 'Nunito', sans-serif;
-      font-size: 2.2rem; font-weight: 800; line-height: 1;
-    }
-    .apropos-img .img-badge p {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; margin-top: 0.2rem; opacity: 0.85;
-    }
+    /* ── ÉQUIPE ── */
+    #equipe { background:var(--off-white); }
+    .equipe-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.5rem; margin-top:3rem; }
+    .membre-card { background:var(--white); border-radius:20px; padding:1.8rem 1.2rem; text-align:center; box-shadow:0 2px 12px rgba(42,181,181,0.06); transition:all 0.3s; border:2px solid transparent; }
+    .membre-card:hover { border-color:var(--teal); transform:translateY(-5px); box-shadow:0 10px 30px rgba(42,181,181,0.15); }
+    .membre-avatar { width:80px; height:80px; border-radius:50%; object-fit:cover; margin:0 auto 1rem; display:block; border:3px solid var(--teal-light); background:var(--teal-pale); }
+    .membre-avatar-placeholder { width:80px; height:80px; border-radius:50%; background:var(--teal-pale); margin:0 auto 1rem; display:flex; align-items:center; justify-content:center; font-size:1.8rem; border:3px solid var(--teal-light); }
+    .membre-card h3 { font-family:'Nunito',sans-serif; font-size:0.95rem; font-weight:800; color:var(--text); }
+    .membre-card .role { font-size:0.78rem; color:var(--teal); font-weight:600; margin-top:0.3rem; text-transform:uppercase; letter-spacing:0.05em; }
 
-    /* SERVICES */
-    #services { background: var(--off-white); }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1.5rem; margin-top: 3rem;
-    }
-    .service-card {
-      background: var(--white); border-radius: 20px; padding: 2.2rem;
-      border: 2px solid transparent; transition: all 0.3s;
-      box-shadow: 0 2px 12px rgba(42,181,181,0.06);
-    }
-    .service-card:hover {
-      border-color: var(--teal); transform: translateY(-6px);
-      box-shadow: 0 12px 36px rgba(42,181,181,0.15);
-    }
-    .service-icon {
-      width: 52px; height: 52px; background: var(--teal-pale);
-      border-radius: 14px; display: flex; align-items: center;
-      justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem;
-    }
-    .service-card h3 {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.15rem; font-weight: 800; color: var(--text); margin-bottom: 0.6rem;
-    }
-    .service-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+    /* ── SERVICES ── */
+    #services { background:var(--white); }
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+    .service-card { background:var(--off-white); border-radius:20px; padding:2.2rem; border:2px solid transparent; transition:all 0.3s; }
+    .service-card:hover { border-color:var(--teal); transform:translateY(-6px); box-shadow:0 12px 36px rgba(42,181,181,0.15); }
+    .service-icon { width:52px; height:52px; background:var(--teal-pale); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:1.2rem; }
+    .service-card h3 { font-family:'Nunito',sans-serif; font-size:1.1rem; font-weight:800; color:var(--text); margin-bottom:0.6rem; }
+    .service-card p { font-size:0.87rem; color:var(--muted); line-height:1.7; }
 
-    /* QUARTIERS */
-    #quartiers { background: var(--teal); padding: 6rem 5rem; }
-    #quartiers .section-label { color: rgba(255,255,255,0.7); }
-    #quartiers .section-label::before { background: rgba(255,255,255,0.7); }
-    #quartiers .section-title { color: var(--white); }
-    #quartiers .section-title em { color: rgba(255,255,255,0.65); font-style: italic; }
-    .quartiers-sub {
-      color: rgba(255,255,255,0.75); margin-top: 1rem;
-      font-size: 0.95rem; line-height: 1.7; max-width: 550px;
-    }
-    .quartiers-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
-    .q-tag {
-      background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.25);
-      color: var(--white); border-radius: 50px; padding: 0.5rem 1.3rem;
-      font-size: 0.85rem; font-weight: 600; transition: all 0.2s; cursor: default;
-    }
-    .q-tag:hover { background: var(--white); color: var(--teal); }
+    /* ── ANNONCES ── */
+    #annonces { background:var(--teal-pale); }
+    .annonces-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-top:3rem; }
+    .annonce-card { background:var(--white); border-radius:16px; overflow:hidden; transition:all 0.3s; box-shadow:0 2px 12px rgba(42,181,181,0.07); text-decoration:none; color:inherit; display:block; }
+    .annonce-card:hover { transform:translateY(-5px); box-shadow:0 12px 32px rgba(42,181,181,0.18); }
+    .annonce-img { width:100%; height:160px; object-fit:cover; display:block; }
+    .annonce-body { padding:1rem 1.2rem 1.2rem; }
+    .annonce-badge { display:inline-flex; align-items:center; gap:0.3rem; background:var(--teal-pale); color:var(--teal); font-size:0.7rem; font-weight:700; padding:0.25rem 0.7rem; border-radius:50px; margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.05em; }
+    .annonce-badge.exclusif { background:#fff3cd; color:#856404; }
+    .annonce-card h3 { font-family:'Nunito',sans-serif; font-size:0.92rem; font-weight:800; color:var(--text); margin-bottom:0.3rem; line-height:1.3; }
+    .annonce-loc { font-size:0.78rem; color:var(--muted); margin-bottom:0.6rem; }
+    .annonce-prix { font-family:'Nunito',sans-serif; font-size:1.2rem; font-weight:800; color:var(--teal); }
+    .annonce-details { display:flex; gap:0.8rem; margin-top:0.5rem; }
+    .annonce-details span { font-size:0.75rem; color:var(--muted); background:var(--teal-pale); padding:0.2rem 0.6rem; border-radius:50px; }
+    .voir-tout { margin-top:2.5rem; display:flex; justify-content:center; }
+    .btn-teal { display:inline-flex; align-items:center; gap:0.6rem; background:var(--teal); color:var(--white); border-radius:50px; padding:0.85rem 2rem; text-decoration:none; font-size:0.88rem; font-weight:700; transition:all 0.25s; border:2px solid var(--teal); }
+    .btn-teal:hover { background:transparent; color:var(--teal); }
+    .btn-outline { display:inline-flex; align-items:center; gap:0.6rem; background:transparent; color:var(--teal); border-radius:50px; padding:0.85rem 2rem; text-decoration:none; font-size:0.88rem; font-weight:700; transition:all 0.25s; border:2px solid var(--teal); }
+    .btn-outline:hover { background:var(--teal); color:var(--white); }
 
-    /* GALERIE */
-    #galerie { background: var(--white); }
-    .galerie-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 3rem;
-    }
-    .galerie-grid div {
-      overflow: hidden; border-radius: 16px;
-      background: var(--teal-pale);
-      transition: box-shadow 0.3s;
-    }
-    .galerie-grid div:hover { box-shadow: 0 8px 28px rgba(42,181,181,0.18); }
-    .galerie-grid img {
-      width: 100%; height: auto; display: block;
-      transition: transform 0.5s;
-    }
-    .galerie-grid div:hover img { transform: scale(1.03); }
+    /* ── QUARTIERS ── */
+    #quartiers { background:var(--teal); padding:6rem 5rem; }
+    #quartiers .section-label { color:rgba(255,255,255,0.7); }
+    #quartiers .section-label::before { background:rgba(255,255,255,0.7); }
+    #quartiers .section-title { color:var(--white); }
+    #quartiers .section-title em { color:rgba(255,255,255,0.65); }
+    .quartiers-sub { color:rgba(255,255,255,0.75); margin-top:1rem; font-size:0.95rem; line-height:1.7; max-width:550px; }
+    .quartiers-grid { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:2.5rem; }
+    .q-tag { background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.25); color:var(--white); border-radius:50px; padding:0.5rem 1.3rem; font-size:0.85rem; font-weight:600; transition:all 0.2s; cursor:default; }
+    .q-tag:hover { background:var(--white); color:var(--teal); }
 
-    /* AVIS */
-    #avis { background: var(--teal-pale); }
-    .avis-top {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem;
-    }
-    .google-score {
-      display: flex; align-items: center; gap: 1.5rem;
-      background: var(--white); border-radius: 20px;
-      padding: 1.5rem 2rem; box-shadow: 0 4px 20px rgba(42,181,181,0.1);
-    }
-    .google-score .num {
-      font-family: 'Nunito', sans-serif;
-      font-size: 3.5rem; font-weight: 800; color: var(--teal); line-height: 1;
-    }
-    .google-score .details .stars { color: #FFD700; font-size: 1.1rem; }
-    .google-score .details p { font-size: 0.82rem; color: var(--muted); font-weight: 600; margin-top: 0.2rem; }
-    .avis-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-    .avis-card {
-      background: var(--white); border-radius: 20px; padding: 2rem;
-      box-shadow: 0 2px 16px rgba(42,181,181,0.07); transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .avis-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(42,181,181,0.13); }
-    .avis-card .top { display: flex; justify-content: space-between; margin-bottom: 1rem; }
-    .avis-card .stars { color: #FFD700; font-size: 0.9rem; }
-    .avis-card .g-icon { width: 22px; height: 22px; opacity: 0.5; }
-    .avis-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; font-style: italic; }
-    .avis-card .author {
-      margin-top: 1.2rem; font-size: 0.82rem; font-weight: 700;
-      color: var(--text); font-style: normal;
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .avis-card .author::before {
-      content: ''; display: inline-block;
-      width: 28px; height: 28px; border-radius: 50%; background: var(--teal-light);
-      flex-shrink: 0;
-    }
-    .voir-avis { margin-top: 2.5rem; display: flex; justify-content: center; }
-    .btn-google {
-      display: inline-flex; align-items: center; gap: 0.8rem;
-      background: var(--white); border: 2px solid var(--teal);
-      color: var(--teal); border-radius: 50px; padding: 0.8rem 2rem;
-      text-decoration: none; font-size: 0.88rem; font-weight: 700; transition: all 0.25s;
-    }
-    .btn-google:hover { background: var(--teal); color: var(--white); }
+    /* ── GALERIE ── */
+    #galerie { background:var(--white); }
+    .galerie-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:3rem; }
+    .galerie-grid div { overflow:hidden; border-radius:16px; background:var(--teal-pale); transition:box-shadow 0.3s; }
+    .galerie-grid div:hover { box-shadow:0 8px 28px rgba(42,181,181,0.18); }
+    .galerie-grid img { width:100%; height:auto; display:block; transition:transform 0.5s; }
+    .galerie-grid div:hover img { transform:scale(1.03); }
 
-    /* CONTACT */
-    #contact { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
-    .contact-left {
-      padding: 6rem 4rem 6rem 5rem; background: var(--teal);
-      position: relative; overflow: hidden;
-    }
-    .contact-left::before {
-      content: ''; position: absolute; bottom: -100px; right: -100px;
-      width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.07);
-    }
-    .contact-left .section-label { color: rgba(255,255,255,0.7); }
-    .contact-left .section-label::before { background: rgba(255,255,255,0.7); }
-    .contact-left .section-title { color: var(--white); }
-    .contact-left .section-title em { color: rgba(255,255,255,0.65); }
-    .contact-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.6rem; position: relative; z-index: 1; }
-    .c-item { display: flex; align-items: flex-start; gap: 1rem; }
-    .c-icon {
-      width: 44px; height: 44px; min-width: 44px;
-      background: rgba(255,255,255,0.2); border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
-    }
-    .c-txt .lbl {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 0.2rem;
-    }
-    .c-txt a, .c-txt p { color: var(--white); text-decoration: none; font-size: 0.95rem; font-weight: 600; line-height: 1.5; transition: opacity 0.2s; }
-    .c-txt a:hover { opacity: 0.8; }
-    .horaires-box {
-      margin-top: 2rem; background: rgba(255,255,255,0.12);
-      border-radius: 16px; padding: 1.4rem 1.6rem; position: relative; z-index: 1;
-    }
-    .horaires-box h4 {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 1rem;
-    }
-    .h-row {
-      display: flex; justify-content: space-between;
-      font-size: 0.85rem; padding: 0.35rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.85); font-weight: 600;
-    }
-    .h-row:last-child { border: none; }
-    .h-row .closed { color: rgba(255,255,255,0.3); font-weight: 400; }
-    .contact-btns { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.9rem; position: relative; z-index: 1; }
-    .btn-call {
-      display: flex; align-items: center; justify-content: center; gap: 0.7rem;
-      background: var(--white); color: var(--teal);
-      padding: 1rem; border-radius: 50px; text-decoration: none;
-      font-weight: 700; font-size: 0.9rem; transition: all 0.25s; border: 2px solid var(--white);
-    }
-    .btn-call:hover { background: transparent; color: var(--white); }
-    .btn-whatsapp {
-      display: flex; align-items: center; justify-content: center; gap: 0.7rem;
-      background: var(--green-wa); color: #fff;
-      padding: 1rem; border-radius: 50px; text-decoration: none;
-      font-weight: 700; font-size: 0.9rem; transition: all 0.25s; border: 2px solid var(--green-wa);
-    }
-    .btn-whatsapp:hover { background: transparent; color: var(--green-wa); }
-    .contact-right { display: flex; flex-direction: column; }
-    .contact-right iframe { flex: 1; width: 100%; border: none; min-height: 450px; }
-    .map-bar {
-      padding: 1.2rem 2rem; background: var(--teal-pale);
-      display: flex; align-items: center; gap: 1rem; border-top: 3px solid var(--teal-light);
-    }
-    .map-bar p { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
-    .map-bar a {
-      margin-left: auto; background: var(--teal); color: var(--white);
-      padding: 0.45rem 1.1rem; border-radius: 50px;
-      text-decoration: none; font-size: 0.8rem; font-weight: 700; white-space: nowrap; transition: background 0.2s;
-    }
-    .map-bar a:hover { background: var(--teal-dark); }
+    /* ── AVIS ── */
+    #avis { background:var(--teal-pale); }
+    .avis-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:3rem; flex-wrap:wrap; gap:2rem; }
+    .google-score { display:flex; align-items:center; gap:1.5rem; background:var(--white); border-radius:20px; padding:1.5rem 2rem; box-shadow:0 4px 20px rgba(42,181,181,0.1); }
+    .google-score .num { font-family:'Nunito',sans-serif; font-size:3.5rem; font-weight:800; color:var(--teal); line-height:1; }
+    .google-score .details .stars { color:#FFD700; font-size:1.1rem; }
+    .google-score .details p { font-size:0.82rem; color:var(--muted); font-weight:600; margin-top:0.2rem; }
+    .avis-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .avis-card { background:var(--white); border-radius:20px; padding:1.8rem; box-shadow:0 2px 16px rgba(42,181,181,0.07); transition:transform 0.3s, box-shadow 0.3s; }
+    .avis-card:hover { transform:translateY(-4px); box-shadow:0 8px 28px rgba(42,181,181,0.13); }
+    .avis-card .top { display:flex; justify-content:space-between; margin-bottom:0.8rem; align-items:flex-start; }
+    .avis-card .stars { color:#FFD700; font-size:0.9rem; }
+    .avis-card .g-icon { width:22px; height:22px; opacity:0.5; flex-shrink:0; }
+    .avis-card p { font-size:0.86rem; color:var(--muted); line-height:1.75; font-style:italic; }
+    .avis-card .author { margin-top:1rem; font-size:0.82rem; font-weight:700; color:var(--text); font-style:normal; display:flex; align-items:center; gap:0.6rem; }
+    .avis-card .author::before { content:''; display:inline-block; width:28px; height:28px; border-radius:50%; background:var(--teal-light); flex-shrink:0; }
+    .voir-avis { margin-top:2.5rem; display:flex; justify-content:center; }
+    .btn-google { display:inline-flex; align-items:center; gap:0.8rem; background:var(--white); border:2px solid var(--teal); color:var(--teal); border-radius:50px; padding:0.8rem 2rem; text-decoration:none; font-size:0.88rem; font-weight:700; transition:all 0.25s; }
+    .btn-google:hover { background:var(--teal); color:var(--white); }
 
-    /* FOOTER */
-    footer {
-      background: var(--text); color: rgba(255,255,255,0.4);
-      padding: 2.5rem 5rem;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 1.5rem; flex-wrap: wrap;
-    }
-    .footer-logo { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white); }
-    .footer-logo span { color: var(--teal); }
-    footer p { font-size: 0.8rem; }
-    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--teal); }
+    /* ── ESTIMATION CTA ── */
+    #estimation { background:var(--text); padding:5rem; text-align:center; }
+    #estimation h2 { font-family:'Nunito',sans-serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:800; color:var(--white); margin-bottom:1rem; }
+    #estimation h2 em { font-style:italic; font-weight:300; color:var(--teal); }
+    #estimation p { color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.7; max-width:540px; margin:0 auto 2.5rem; }
+    .estimation-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn-teal-big { background:var(--teal); color:var(--white); padding:1.1rem 2.5rem; border-radius:50px; text-decoration:none; font-size:1rem; font-weight:700; border:2px solid var(--teal); transition:all 0.25s; display:inline-flex; align-items:center; gap:0.6rem; }
+    .btn-teal-big:hover { background:transparent; color:var(--teal); }
 
-    /* WA FLOAT */
-    .wa-float {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-      background: var(--green-wa); color: #fff;
-      width: 60px; height: 60px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: all 0.3s;
-      animation: pulse-wa 2.5s infinite;
-    }
-    .wa-float:hover { transform: scale(1.1); }
-    .wa-float .tip {
-      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
-      background: var(--text); color: #fff; padding: 0.4rem 0.9rem;
-      border-radius: 8px; font-size: 0.78rem; font-weight: 600; white-space: nowrap;
-      opacity: 0; pointer-events: none; transition: opacity 0.2s;
-    }
-    .wa-float:hover .tip { opacity: 1; }
-    @keyframes pulse-wa {
-      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
-      50%      { box-shadow: 0 4px 36px rgba(37,211,102,0.7); }
-    }
+    /* ── CONTACT ── */
+    #contact { background:var(--white); display:grid; grid-template-columns:1fr 1fr; gap:0; padding:0; }
+    .contact-left { padding:6rem 4rem 6rem 5rem; background:var(--teal); position:relative; overflow:hidden; }
+    .contact-left::before { content:''; position:absolute; bottom:-100px; right:-100px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,0.07); }
+    .contact-left .section-label { color:rgba(255,255,255,0.7); }
+    .contact-left .section-label::before { background:rgba(255,255,255,0.7); }
+    .contact-left .section-title { color:var(--white); }
+    .contact-left .section-title em { color:rgba(255,255,255,0.65); }
+    .contact-list { margin-top:2.5rem; display:flex; flex-direction:column; gap:1.6rem; position:relative; z-index:1; }
+    .c-item { display:flex; align-items:flex-start; gap:1rem; }
+    .c-icon { width:44px; height:44px; min-width:44px; background:rgba(255,255,255,0.2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+    .c-txt .lbl { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.6); margin-bottom:0.2rem; }
+    .c-txt a, .c-txt p { color:var(--white); text-decoration:none; font-size:0.95rem; font-weight:600; line-height:1.5; transition:opacity 0.2s; }
+    .c-txt a:hover { opacity:0.8; }
+    .horaires-box { margin-top:2rem; background:rgba(255,255,255,0.12); border-radius:16px; padding:1.4rem 1.6rem; position:relative; z-index:1; }
+    .horaires-box h4 { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.7); margin-bottom:1rem; }
+    .h-row { display:flex; justify-content:space-between; font-size:0.85rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.85); font-weight:600; }
+    .h-row:last-child { border:none; }
+    .h-row .closed { color:rgba(255,255,255,0.3); font-weight:400; }
+    .contact-btns { margin-top:2rem; display:flex; flex-direction:column; gap:0.9rem; position:relative; z-index:1; }
+    .btn-call { display:flex; align-items:center; justify-content:center; gap:0.7rem; background:var(--white); color:var(--teal); padding:1rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:0.9rem; transition:all 0.25s; border:2px solid var(--white); }
+    .btn-call:hover { background:transparent; color:var(--white); }
+    .btn-whatsapp { display:flex; align-items:center; justify-content:center; gap:0.7rem; background:var(--green-wa); color:#fff; padding:1rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:0.9rem; transition:all 0.25s; border:2px solid var(--green-wa); }
+    .btn-whatsapp:hover { background:transparent; color:var(--green-wa); }
+    .contact-right { display:flex; flex-direction:column; }
+    .contact-right iframe { flex:1; width:100%; border:none; min-height:480px; }
+    .map-bar { padding:1.2rem 2rem; background:var(--teal-pale); display:flex; align-items:center; gap:1rem; border-top:3px solid var(--teal-light); }
+    .map-bar p { font-size:0.85rem; color:var(--muted); font-weight:600; }
+    .map-bar a { margin-left:auto; background:var(--teal); color:var(--white); padding:0.45rem 1.1rem; border-radius:50px; text-decoration:none; font-size:0.8rem; font-weight:700; white-space:nowrap; transition:background 0.2s; }
+    .map-bar a:hover { background:var(--teal-dark); }
 
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(20px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    /* ── FOOTER ── */
+    footer { background:var(--text); color:rgba(255,255,255,0.4); padding:3rem 5rem 2rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.1); }
+    .footer-logo-img { height:42px; width:auto; object-fit:contain; filter:brightness(0) invert(1); margin-bottom:1rem; display:block; }
+    .footer-desc { font-size:0.85rem; color:rgba(255,255,255,0.45); line-height:1.7; }
+    .footer-col h4 { font-family:'Nunito',sans-serif; font-size:0.82rem; font-weight:800; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
+    .footer-col a { display:block; font-size:0.82rem; color:rgba(255,255,255,0.4); text-decoration:none; margin-bottom:0.5rem; transition:color 0.2s; }
+    .footer-col a:hover { color:var(--teal); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1.5rem; flex-wrap:wrap; gap:1rem; }
+    .footer-bottom p { font-size:0.78rem; }
+    .footer-legal { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-legal a { font-size:0.78rem; color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.2s; }
+    .footer-legal a:hover { color:var(--teal); }
+
+    /* ── WA FLOAT ── */
+    .wa-float { position:fixed; bottom:2rem; right:2rem; z-index:200; background:var(--green-wa); color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 20px rgba(37,211,102,0.45); transition:all 0.3s; animation:pulse-wa 2.5s infinite; }
+    .wa-float:hover { transform:scale(1.1); }
+    .wa-float .tip { position:absolute; right:68px; top:50%; transform:translateY(-50%); background:var(--text); color:#fff; padding:0.4rem 0.9rem; border-radius:8px; font-size:0.78rem; font-weight:600; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+    .wa-float:hover .tip { opacity:1; }
+    @keyframes pulse-wa { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45)}50%{box-shadow:0 4px 36px rgba(37,211,102,0.7)} }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)} }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    /* RESPONSIVE */
-    @media (max-width: 1100px) {
-      nav { padding: 0 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      section { padding: 4rem 2.5rem; }
-      #hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 5rem 2.5rem 3.5rem; }
-      .hero-right { height: 70vw; }
-      .hero-mosaic { position: absolute; inset: 0; }
-      #stats { grid-template-columns: repeat(2,1fr); padding: 2.5rem; }
-      #apropos { grid-template-columns: 1fr; }
-      .apropos-img { display: none; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .galerie-grid { grid-template-columns: 1fr 1fr; }
-      .avis-grid { grid-template-columns: 1fr; }
-      .avis-top { flex-direction: column; align-items: flex-start; }
-      #contact { grid-template-columns: 1fr; }
-      .contact-left { padding: 4rem 2.5rem; }
-      footer { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
+    /* ── RESPONSIVE ── */
+    @media(max-width:1200px){
+      .annonces-grid { grid-template-columns:repeat(2,1fr); }
+      .equipe-grid { grid-template-columns:repeat(3,1fr); }
     }
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .services-grid { grid-template-columns: 1fr; }
-      .hero-btns { flex-direction: column; }
-      #stats { grid-template-columns: 1fr 1fr; padding: 2rem 1.5rem; }
+    @media(max-width:1100px){
+      nav { padding:0 1.5rem; }
+      .nav-links { gap:1rem; }
+      section { padding:4rem 2.5rem; }
+      #hero { grid-template-columns:1fr; min-height:auto; }
+      .hero-left { padding:5rem 2.5rem 3.5rem; }
+      .hero-right { height:70vw; }
+      .hero-mosaic { position:absolute; inset:0; }
+      #stats { grid-template-columns:repeat(2,1fr); padding:2.5rem; }
+      #apropos { grid-template-columns:1fr; }
+      .apropos-img { display:none; }
+      .services-grid { grid-template-columns:1fr 1fr; }
+      .galerie-grid { grid-template-columns:1fr 1fr; }
+      .avis-grid { grid-template-columns:1fr 1fr; }
+      .avis-top { flex-direction:column; align-items:flex-start; }
+      #contact { grid-template-columns:1fr; }
+      .contact-left { padding:4rem 2.5rem; }
+      .footer-top { grid-template-columns:1fr 1fr; gap:2rem; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+    }
+    @media(max-width:640px){
+      .nav-links { display:none; }
+      .services-grid { grid-template-columns:1fr; }
+      .hero-btns { flex-direction:column; }
+      #stats { grid-template-columns:1fr 1fr; padding:2rem 1.5rem; }
+      .annonces-grid { grid-template-columns:1fr; }
+      .equipe-grid { grid-template-columns:repeat(2,1fr); }
+      .avis-grid { grid-template-columns:1fr; }
+      .galerie-grid { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr; }
+      #estimation { padding:4rem 2rem; }
+      .estimation-btns { flex-direction:column; align-items:center; }
+      .valeurs { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -480,14 +289,15 @@
 <!-- NAV -->
 <nav id="navbar">
   <a class="nav-logo" href="#hero">
-    <img src="https://lh3.googleusercontent.com/p/AF1QipN_MTrm1LW1rDzV-IXMSkS_bBiB-ns3ytpcXSTi=s1360-w1360-h1020-rw" alt="l'Adresse - l'immobilier coopératif" style="height:46px; width:auto; object-fit:contain;" />
+    <img src="https://lh3.googleusercontent.com/p/AF1QipN_MTrm1LW1rDzV-IXMSkS_bBiB-ns3ytpcXSTi=s1360-w1360-h1020-rw" alt="l'Adresse - l'immobilier coopératif" style="height:44px;width:auto;object-fit:contain;"/>
   </a>
   <ul class="nav-links">
     <li><a href="#apropos">L'agence</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+    <li><a href="#annonces">Annonces</a></li>
     <li><a href="#avis">Avis</a></li>
-    <li><a href="#contact" class="nav-cta">Estimer mon bien</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://www.monprojetladresse.immo/agence-359/" target="_blank" class="nav-cta">Estimer mon bien</a></li>
   </ul>
 </nav>
 
@@ -500,15 +310,13 @@
       <em>au meilleur prix</em><br>
       à Strasbourg
     </h1>
-    <p class="hero-sub">
-      Estimation gratuite, stratégie personnalisée, accompagnement complet jusqu'à la signature. Nos experts connaissent chaque quartier de Strasbourg et de l'Eurométropole.
-    </p>
+    <p class="hero-sub">Estimation gratuite, stratégie personnalisée, accompagnement complet jusqu'à la signature. Nos experts connaissent chaque quartier de Strasbourg et de l'Eurométropole.</p>
     <div class="hero-rating">
       <span class="stars">★★★★★</span>
       <p><strong>5,0 / 5</strong> <span>· 66 avis Google</span></p>
     </div>
     <div class="hero-btns">
-      <a href="tel:+33388315981" class="btn-white">📞 &nbsp;03 88 31 59 81</a>
+      <a href="tel:0388315981" class="btn-white">📞 &nbsp;03 88 31 59 81</a>
       <a href="https://wa.me/33388315981" target="_blank" class="btn-wa" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
@@ -517,9 +325,9 @@
   </div>
   <div class="hero-right">
     <div class="hero-mosaic">
-      <img src="https://lh3.googleusercontent.com/p/AF1QipNdD8IREjXH4E9BxHkGFmw7yLt8w6EfOydyqzk4=s1360-w1360-h1020-rw" alt="Bien immobilier Strasbourg" loading="eager"/>
-      <img src="https://lh3.googleusercontent.com/p/AF1QipOyqyU-469ie7rpDGKALkKlWU1lcwSXeFwrJ62Q=s1360-w1360-h1020-rw" alt="Appartement" loading="eager"/>
-      <img class="span2" src="https://lh3.googleusercontent.com/p/AF1QipO2EJy9KvUnj2P2xJQjTV21yhqeIFLsQFBCB94D=s1360-w1360-h1020-rw" alt="Maison Strasbourg" loading="eager"/>
+      <img src="https://lh3.googleusercontent.com/p/AF1QipNdD8IREjXH4E9BxHkGFmw7yLt8w6EfOydyqzk4=s1360-w1360-h1020-rw" alt="" loading="eager"/>
+      <img src="https://lh3.googleusercontent.com/p/AF1QipOyqyU-469ie7rpDGKALkKlWU1lcwSXeFwrJ62Q=s1360-w1360-h1020-rw" alt="" loading="eager"/>
+      <img class="span2" src="https://lh3.googleusercontent.com/p/AF1QipO2EJy9KvUnj2P2xJQjTV21yhqeIFLsQFBCB94D=s1360-w1360-h1020-rw" alt="" loading="eager"/>
     </div>
     <div class="hero-badge">
       <div class="score">5,0</div>
@@ -534,7 +342,7 @@
   <div class="stat-item"><div class="num">5★</div><div class="lbl">Note Google parfaite</div></div>
   <div class="stat-item"><div class="num">66</div><div class="lbl">Avis clients vérifiés</div></div>
   <div class="stat-item"><div class="num">10+</div><div class="lbl">Quartiers couverts</div></div>
-  <div class="stat-item"><div class="num">100%</div><div class="lbl">Gratuit &amp; sans engagement</div></div>
+  <div class="stat-item"><div class="num">100%</div><div class="lbl">Estimation gratuite</div></div>
 </div>
 
 <!-- À PROPOS -->
@@ -542,9 +350,16 @@
   <div class="apropos-text">
     <p class="section-label">L'agence</p>
     <h2 class="section-title">L'Adresse Strasbourg,<br><em>l'immobilier coopératif</em></h2>
-    <p>L'Adresse Strasbourg est une agence immobilière spécialisée dans l'estimation et la vente de biens. Notre équipe accompagne les propriétaires pour définir le prix réel de leur maison ou appartement grâce à une analyse complète du marché local.</p>
-    <p>Notre connaissance approfondie des quartiers strasbourgeois est notre force : Conseil des XV, Orangerie, Robertsau, Cronenbourg, Neudorf, Krutenau, Gare, Esplanade, Meinau et toute l'Eurométropole.</p>
-    <p>Estimation immobilière gratuite et rapide, conseils vendeurs, stratégie personnalisée et accompagnement complet jusqu'à la signature chez le notaire.</p>
+    <p>Agence immobilière spécialisée en estimation et vente de biens à Strasbourg et dans l'Eurométropole. Nous accompagnons les propriétaires pour définir le prix réel de leur bien grâce à une analyse complète du marché local.</p>
+    <p>Notre expertise couvre les quartiers du Conseil des XV, Orangerie, Robertsau, Neudorf, Cronenbourg, Krutenau, Centre-Ville, Gare, Esplanade, Contades, Neuhof, Meinau, Koenigshoffen, ainsi qu'Obernai et ses environs.</p>
+    <div class="valeurs">
+      <div class="valeur-item">Humanisme &amp; écoute</div>
+      <div class="valeur-item">Transparence &amp; partage</div>
+      <div class="valeur-item">Professionnalisme &amp; rigueur</div>
+      <div class="valeur-item">Proximité de quartier</div>
+      <div class="valeur-item">Efficacité dans les délais</div>
+      <div class="valeur-item">Accompagnement complet</div>
+    </div>
     <div class="coop-badge">
       <p>🤝 &nbsp;<strong>L'immobilier coopératif</strong> — une approche humaine, transparente et à votre service</p>
     </div>
@@ -555,17 +370,154 @@
   </div>
 </section>
 
+<!-- ÉQUIPE -->
+<section id="equipe" class="reveal">
+  <p class="section-label">Notre équipe</p>
+  <h2 class="section-title">Des experts <em>à votre service</em></h2>
+  <div class="equipe-grid">
+    <div class="membre-card">
+      <img class="membre-avatar" src="https://www.ladresse.com/img/agent/pacquelet-eric-4054.png" alt="Eric Pacquelet" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="membre-avatar-placeholder" style="display:none">👤</div>
+      <h3>Eric PACQUELET</h3>
+      <div class="role">Président</div>
+    </div>
+    <div class="membre-card">
+      <img class="membre-avatar" src="https://www.ladresse.com/img/agent/morchova-nikole-Array.png" alt="Nikole Morchova" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="membre-avatar-placeholder" style="display:none">👤</div>
+      <h3>Nikole MORCHOVA</h3>
+      <div class="role">Agent commercial</div>
+    </div>
+    <div class="membre-card">
+      <img class="membre-avatar" src="https://www.ladresse.com/img/agent/gozuacik-furkan-Array.png" alt="Furkan Gozuacik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="membre-avatar-placeholder" style="display:none">👤</div>
+      <h3>Furkan GOZUACIK</h3>
+      <div class="role">Agent commercial</div>
+    </div>
+    <div class="membre-card">
+      <img class="membre-avatar" src="https://www.ladresse.com/img/agent/perruzza-mathis-Array.png" alt="Mathis Perruzza" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="membre-avatar-placeholder" style="display:none">👤</div>
+      <h3>Mathis PERRUZZA</h3>
+      <div class="role">Agent commercial</div>
+    </div>
+    <div class="membre-card">
+      <div class="membre-avatar-placeholder">👤</div>
+      <h3>Laure PELAPRAT</h3>
+      <div class="role">Agent commercial</div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services" class="reveal">
   <p class="section-label">Nos services</p>
   <h2 class="section-title">Tout ce dont vous avez <em>besoin</em></h2>
   <div class="services-grid">
-    <div class="service-card"><div class="service-icon">🏠</div><h3>Estimation gratuite</h3><p>Une estimation précise et gratuite de votre bien, basée sur une analyse complète du marché strasbourgeois. Sans engagement, rapide et fiable.</p></div>
-    <div class="service-card"><div class="service-icon">📋</div><h3>Vente immobilière</h3><p>Stratégie personnalisée pour vendre votre appartement ou maison au meilleur prix. Du premier conseil jusqu'à la signature notariée.</p></div>
-    <div class="service-card"><div class="service-icon">🔍</div><h3>Recherche de biens</h3><p>Notre équipe recherche pour vous le bien idéal selon vos critères et votre budget, dans les quartiers qui vous correspondent.</p></div>
-    <div class="service-card"><div class="service-icon">📊</div><h3>Analyse de marché</h3><p>Expertise approfondie des prix au m² par quartier. Une vision claire et honnête du marché immobilier strasbourgeois actuel.</p></div>
-    <div class="service-card"><div class="service-icon">✨</div><h3>Valorisation du bien</h3><p>Conseils concrets pour valoriser votre bien : photos professionnelles, mise en valeur et stratégie de communication ciblée.</p></div>
-    <div class="service-card"><div class="service-icon">✍️</div><h3>Suivi jusqu'à la signature</h3><p>Accompagnement complet à chaque étape administrative et juridique, de la promesse de vente jusqu'à l'acte authentique.</p></div>
+    <div class="service-card"><div class="service-icon">🏠</div><h3>Estimation gratuite</h3><p>Estimation précise et gratuite, basée sur le marché actuel, les biens récemment vendus et les spécificités de votre logement (quartier, étage, travaux, extérieur…).</p></div>
+    <div class="service-card"><div class="service-icon">📋</div><h3>Vente immobilière</h3><p>Stratégie de prix réaliste, sélection des acquéreurs, organisation des visites et suivi jusqu'à la signature chez le notaire.</p></div>
+    <div class="service-card"><div class="service-icon">📸</div><h3>Mise en valeur</h3><p>Photos professionnelles, home staging, annonces percutantes pour attirer les bons acheteurs et vendre vite au meilleur prix.</p></div>
+    <div class="service-card"><div class="service-icon">🔍</div><h3>Recherche d'acquéreurs</h3><p>Sélection rigoureuse des acheteurs et vérification de leur solvabilité pour sécuriser votre vente dès le premier compromis.</p></div>
+    <div class="service-card"><div class="service-icon">📊</div><h3>Analyse de marché</h3><p>Connaissance approfondie des prix au m² par quartier strasbourgeois. Une vision claire et honnête du marché local actuel.</p></div>
+    <div class="service-card"><div class="service-icon">💰</div><h3>Simulation financement</h3><p>Accompagnement de vos acheteurs dans leur financement grâce à notre <a href="https://www.ladresse.com/simulation-financement" target="_blank" style="color:var(--teal)">simulateur en ligne</a>.</p></div>
+  </div>
+</section>
+
+<!-- ANNONCES -->
+<section id="annonces" class="reveal">
+  <p class="section-label">Nos annonces</p>
+  <h2 class="section-title">Biens disponibles <em>à Strasbourg</em></h2>
+  <div class="annonces-grid">
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/appartement/strasbourg-67000/14242764" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/2/4/2/7/6/4/14242764a.jpg?version=1772719543" alt="Appartement Strasbourg" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge exclusif">★ Exclusif</span>
+        <h3>Appartement 1 pièce — 22 m²</h3>
+        <div class="annonce-loc">📍 Strasbourg 67000</div>
+        <div class="annonce-prix">79 500 €</div>
+        <div class="annonce-details"><span>1 pièce</span><span>22 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/appartement/strasbourg-67200/14223841" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/2/2/3/8/4/1/14223841a.jpg?version=1767787780" alt="Appartement Strasbourg" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge">Appartement</span>
+        <h3>Appartement 3 pièces — 63 m²</h3>
+        <div class="annonce-loc">📍 Strasbourg 67200</div>
+        <div class="annonce-prix">179 000 €</div>
+        <div class="annonce-details"><span>3 pièces</span><span>2 ch.</span><span>63 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/appartement/strasbourg-67000/14165434" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/1/6/5/4/3/4/14165434a.jpg?version=1761727909" alt="Appartement Strasbourg" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge exclusif">★ Exclusif</span>
+        <h3>Appartement 3 pièces — 62 m²</h3>
+        <div class="annonce-loc">📍 Strasbourg 67000</div>
+        <div class="annonce-prix">190 000 €</div>
+        <div class="annonce-details"><span>3 pièces</span><span>2 ch.</span><span>62 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/appartement/strasbourg-67200/14138330" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/1/3/8/3/3/0/14138330a.jpg?version=1775660275" alt="Appartement Strasbourg" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge exclusif">★ Exclusif</span>
+        <h3>Appartement 3 pièces — 65 m²</h3>
+        <div class="annonce-loc">📍 Strasbourg 67200</div>
+        <div class="annonce-prix">239 000 €</div>
+        <div class="annonce-details"><span>3 pièces</span><span>2 ch.</span><span>65 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/appartement/strasbourg-67200/14305418" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/3/0/5/4/1/8/14305418a.jpg?version=1774018114" alt="Appartement Strasbourg" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge">Appartement</span>
+        <h3>Appartement 2 pièces — 35 m²</h3>
+        <div class="annonce-loc">📍 Strasbourg 67200</div>
+        <div class="annonce-prix">129 900 €</div>
+        <div class="annonce-details"><span>2 pièces</span><span>1 ch.</span><span>35 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/appartement/bischheim-67800/14068442" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/0/6/8/4/4/2/14068442a.jpg?version=1768986753" alt="Appartement Bischheim" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge exclusif">★ Exclusif</span>
+        <h3>Appartement 5 pièces — 126 m²</h3>
+        <div class="annonce-loc">📍 Bischheim 67800</div>
+        <div class="annonce-prix">274 900 €</div>
+        <div class="annonce-details"><span>5 pièces</span><span>3 ch.</span><span>126 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/maison-d-architecte/lautenbach-68610/14083088" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/0/8/3/0/8/8/14083088a.jpg?version=1753792697" alt="Maison architecte" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge">Maison d'architecte</span>
+        <h3>Maison d'architecte 7 pièces — 170 m²</h3>
+        <div class="annonce-loc">📍 Lautenbach 68610</div>
+        <div class="annonce-prix">749 000 €</div>
+        <div class="annonce-details"><span>7 pièces</span><span>3 ch.</span><span>170 m²</span></div>
+      </div>
+    </a>
+
+    <a class="annonce-card" href="https://www.ladresse.com/annonce/achat/maison-de-maitre/colmar-68000/14298807" target="_blank" rel="noopener">
+      <img class="annonce-img" src="https://admin.exceladresse.com/office21/ladresstras_110725/catalog/images/pr_p/1/4/2/9/8/8/0/7/14298807a.jpg?version=1773332843" alt="Maison de maître Colmar" loading="lazy"/>
+      <div class="annonce-body">
+        <span class="annonce-badge">Maison de maître</span>
+        <h3>Maison de maître 11 pièces — 250 m²</h3>
+        <div class="annonce-loc">📍 Colmar 68000</div>
+        <div class="annonce-prix">985 000 €</div>
+        <div class="annonce-details"><span>11 pièces</span><span>6 ch.</span><span>Jardin</span></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="voir-tout">
+    <a href="https://www.ladresse.com/agence/l-adresse-strasbourg/397/acheter" target="_blank" class="btn-teal" rel="noopener">Voir toutes nos annonces →</a>
   </div>
 </section>
 
@@ -573,32 +525,33 @@
 <section id="quartiers" class="reveal">
   <p class="section-label">Notre territoire</p>
   <h2 class="section-title">Experts de <em>chaque quartier</em></h2>
-  <p class="quartiers-sub">Nous couvrons l'ensemble de Strasbourg et de son Eurométropole. Notre ancrage local est notre atout pour vous garantir une estimation juste et une vente réussie.</p>
+  <p class="quartiers-sub">Nous couvrons l'ensemble de Strasbourg, de son Eurométropole et d'Obernai. Notre ancrage local est notre force pour vous garantir une estimation juste et une vente réussie.</p>
   <div class="quartiers-grid">
     <span class="q-tag">Conseil des XV</span><span class="q-tag">Orangerie</span>
     <span class="q-tag">Robertsau</span><span class="q-tag">Cronenbourg</span>
     <span class="q-tag">Neudorf</span><span class="q-tag">Krutenau</span>
-    <span class="q-tag">Gare</span><span class="q-tag">Esplanade</span>
-    <span class="q-tag">Meinau</span><span class="q-tag">Petite France</span>
-    <span class="q-tag">Neustadt</span><span class="q-tag">Hautepierre</span>
-    <span class="q-tag">Koenigshoffen</span><span class="q-tag">Eurométropole</span>
+    <span class="q-tag">Centre-Ville</span><span class="q-tag">Gare</span>
+    <span class="q-tag">Esplanade</span><span class="q-tag">Contades</span>
+    <span class="q-tag">Neuhof</span><span class="q-tag">Meinau</span>
+    <span class="q-tag">Koenigshoffen</span><span class="q-tag">Obernai & environs</span>
+    <span class="q-tag">Eurométropole</span>
   </div>
 </section>
 
 <!-- GALERIE -->
 <section id="galerie" class="reveal">
-  <p class="section-label">Galerie</p>
-  <h2 class="section-title">Notre <em>agence</em> en images</h2>
+  <p class="section-label">Notre agence</p>
+  <h2 class="section-title">Notre agence <em>en images</em></h2>
   <div class="galerie-grid">
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipNTyFQkpsFJ_eqghyHSTSmyTG0ecO3eZ_GHO91L=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipOXN9R1MOaNiFsSu0Qb6gquvqexEGWBDJT-lJ1j=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipMyRCUD3lUDdtdpbF6ePNo35RXEyJR9BbEpQyVT=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipNGtKsko-oyjuIOPRMP25cXMN3b4pl6LgIK-x8z=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipPxW5jyB1GijmZZWVKiTNzSCqxh--qLDyJxb9G7=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipPWpnw0H_3yHXJfnjll3SP8MoAin0CRuPJMX1v2=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipN_MTrm1LW1rDzV-IXMSkS_bBiB-ns3ytpcXSTi=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipPuUQ2IIN9N2sWoMkwzhEfFZXl9OFGk8tcCyQHb=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
-    <div><img src="https://lh3.googleusercontent.com/p/AF1QipP93G4evcXzJrN7tE16ZsXBx-IaCeojaAdzCj_h=s1360-w1360-h1020-rw" alt="L'agence l'Adresse Strasbourg" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipNTyFQkpsFJ_eqghyHSTSmyTG0ecO3eZ_GHO91L=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipOXN9R1MOaNiFsSu0Qb6gquvqexEGWBDJT-lJ1j=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipMyRCUD3lUDdtdpbF6ePNo35RXEyJR9BbEpQyVT=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipNGtKsko-oyjuIOPRMP25cXMN3b4pl6LgIK-x8z=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipPxW5jyB1GijmZZWVKiTNzSCqxh--qLDyJxb9G7=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipPWpnw0H_3yHXJfnjll3SP8MoAin0CRuPJMX1v2=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipPuUQ2IIN9N2sWoMkwzhEfFZXl9OFGk8tcCyQHb=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipP93G4evcXzJrN7tE16ZsXBx-IaCeojaAdzCj_h=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
+    <div><img src="https://lh3.googleusercontent.com/p/AF1QipOX8REVoCFB_RQ-dMmR8SpIyeOOfHWw-h3ZYFfH=s1360-w1360-h1020-rw" alt="" loading="lazy"/></div>
   </div>
 </section>
 
@@ -618,36 +571,59 @@
     </div>
   </div>
   <div class="avis-grid">
+
     <div class="avis-card">
-      <div class="top">
-        <div class="stars">★★★★★</div>
-        <svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg>
-      </div>
-      <p>« Professionnalisme, réactivité et bienveillance. L'agence a su estimer notre appartement à sa juste valeur et nous a accompagnés avec une grande expertise jusqu'à la signature. »</p>
-      <div class="author">Sophie M. · Robertsau</div>
+      <div class="top"><div class="stars">★★★★★</div><svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg></div>
+      <p>« Monsieur Pacquelet, un agent immobilier très professionnel, à l'écoute et toujours disponible, avec des conseils justes et pertinents. Une approche humaine et rassurante. Un accompagnement de grande qualité. Je recommande sans hésitation. »</p>
+      <div class="author">Karine Cormenier</div>
     </div>
+
     <div class="avis-card">
-      <div class="top">
-        <div class="stars">★★★★★</div>
-        <svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg>
-      </div>
-      <p>« Excellent accompagnement du début à la fin. L'équipe connaît parfaitement le marché strasbourgeois. Notre bien a été vendu en moins de 3 semaines au prix demandé. »</p>
-      <div class="author">Thomas & Claire B. · Orangerie</div>
+      <div class="top"><div class="stars">★★★★★</div><svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg></div>
+      <p>« J'ai confié la vente de mon appartement à Furkan GOZUACIK et je m'en félicite ! La vente s'est faite très rapidement, au prix, auprès d'un acheteur fiable. Professionnalisme et réactivité sans faille. On aimerait avoir droit à cette qualité de service plus souvent ! »</p>
+      <div class="author">K B</div>
     </div>
+
     <div class="avis-card">
-      <div class="top">
-        <div class="stars">★★★★★</div>
-        <svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg>
-      </div>
-      <p>« Une agence à l'écoute, honnête dans son estimation et très réactive. Grâce à leur stratégie personnalisée, notre appartement du Neudorf a été vendu rapidement dans les meilleures conditions. »</p>
-      <div class="author">Pierre L. · Neudorf</div>
+      <div class="top"><div class="stars">★★★★★</div><svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg></div>
+      <p>« Je tiens à remercier Nikole pour les précieux conseils apportés à ma famille. Son professionnalisme, sa disponibilité et sa qualité d'écoute nous ont permis d'y voir beaucoup plus clair. Elle a su répondre à toutes nos questions avec patience et bienveillance. »</p>
+      <div class="author">Ilona Fuentes</div>
     </div>
+
+    <div class="avis-card">
+      <div class="top"><div class="stars">★★★★★</div><svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg></div>
+      <p>« Ça fait plusieurs fois que je sollicite l'agence l'Adresse Strasbourg pour mes projets immobiliers et à chaque fois ils sont au top. Ils m'écoutent, me conseillent et m'aident à réaliser mes projets rapidement. Je vous conseille vivement. »</p>
+      <div class="author">Izan Sanchez</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="top"><div class="stars">★★★★★</div><svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg></div>
+      <p>« Mr. Eric Pacquelet s'est occupé de la vente de mon appartement d'une main de maître. C'est une personne à l'écoute, toujours disponible et de bonne humeur. Un grand professionnel, sérieux et de confiance. N'hésitez surtout pas à faire appel à lui. »</p>
+      <div class="author">Marie Anne Mathis</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="top"><div class="stars">★★★★★</div><svg class="g-icon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg></div>
+      <p>« Merci à Samia ! Une professionnelle vraiment au top : très réactive, à l'écoute et d'un grand professionnalisme. L'accompagnement a été excellent du début à la fin, tout était clair, bien expliqué et très bien suivi. Je recommande vivement ! »</p>
+      <div class="author">Saliha Lamhalhli</div>
+    </div>
+
   </div>
   <div class="voir-avis">
     <a class="btn-google" href="https://www.google.com/maps/place/Agence+immobili%C3%A8re+l'Adresse+Strasbourg" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.3 33.1 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5 13.3 4.5 4.5 13.3 4.5 24S13.3 43.5 24 43.5c11.5 0 21.5-8.3 21.5-19.5 0-1.3-.1-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.2 13 24 13c3.1 0 5.8 1.1 7.9 3l6-6C34.5 6.6 29.6 4.5 24 4.5c-7.6 0-14.2 4.4-17.7 10.2z"/><path fill="#FBBC05" d="M24 43.5c5.6 0 10.6-2 14.4-5.3l-6.7-5.5C29.6 34.8 26.9 36 24 36c-5.7 0-10.2-2.8-11.7-7.4l-7 5.4C8.5 39.5 15.6 43.5 24 43.5z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.5C42.1 36.3 45.5 30.6 45.5 24c0-1.3-.1-2.7-.5-4z"/></svg>
       Voir tous les avis Google
     </a>
+  </div>
+</section>
+
+<!-- ESTIMATION CTA -->
+<section id="estimation" class="reveal">
+  <h2>Estimez votre bien<br><em>gratuitement et sans engagement</em></h2>
+  <p>En quelques minutes, obtenez une estimation précise de votre appartement ou maison à Strasbourg. Nos conseillers analysent le marché actuel et les ventes récentes dans votre quartier.</p>
+  <div class="estimation-btns">
+    <a href="https://www.monprojetladresse.immo/agence-359/" target="_blank" class="btn-teal-big" rel="noopener">🏠 &nbsp;Estimer mon bien gratuitement</a>
+    <a href="tel:0388315981" class="btn-teal-big" style="background:transparent;color:var(--teal);border-color:var(--teal)">📞 &nbsp;Appeler le 03 88 31 59 81</a>
   </div>
 </section>
 
@@ -658,18 +634,19 @@
     <h2 class="section-title">Parlons de votre <em>projet</em></h2>
     <div class="contact-list">
       <div class="c-item"><div class="c-icon">📍</div><div class="c-txt"><div class="lbl">Adresse</div><p>22 Rue d'Ypres, 67000 Strasbourg</p></div></div>
-      <div class="c-item"><div class="c-icon">📞</div><div class="c-txt"><div class="lbl">Téléphone</div><a href="tel:+33388315981">03 88 31 59 81</a></div></div>
+      <div class="c-item"><div class="c-icon">📞</div><div class="c-txt"><div class="lbl">Téléphone</div><a href="tel:0388315981">03 88 31 59 81</a></div></div>
       <div class="c-item"><div class="c-icon">✉️</div><div class="c-txt"><div class="lbl">Email</div><a href="mailto:contact@ladresse-strasbourg.fr">contact@ladresse-strasbourg.fr</a></div></div>
       <div class="c-item"><div class="c-icon">💬</div><div class="c-txt"><div class="lbl">WhatsApp</div><a href="https://wa.me/33388315981" target="_blank" rel="noopener">Écrire sur WhatsApp</a></div></div>
     </div>
     <div class="horaires-box">
       <h4>Horaires d'ouverture</h4>
-      <div class="h-row"><span>Lundi – Vendredi</span><span>9h00 – 12h00 / 14h00 – 18h00</span></div>
-      <div class="h-row"><span>Samedi</span><span class="closed">Fermé</span></div>
+      <div class="h-row"><span>Lundi – Jeudi</span><span>9h00 – 12h00 / 14h00 – 18h00</span></div>
+      <div class="h-row"><span>Vendredi</span><span>9h00 – 12h00 / 14h00 – 17h00</span></div>
+      <div class="h-row"><span>Samedi</span><span>Sur rendez-vous (matin)</span></div>
       <div class="h-row"><span>Dimanche</span><span class="closed">Fermé</span></div>
     </div>
     <div class="contact-btns">
-      <a href="tel:+33388315981" class="btn-call">📞 &nbsp;Appeler le 03 88 31 59 81</a>
+      <a href="tel:0388315981" class="btn-call">📞 &nbsp;Appeler le 03 88 31 59 81</a>
       <a href="https://wa.me/33388315981" target="_blank" class="btn-whatsapp" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Écrire sur WhatsApp
@@ -677,11 +654,7 @@
     </div>
   </div>
   <div class="contact-right">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641.5!2d7.7794849!3d48.5861878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28bdbe7a3fa26bd1%3A0x94ad9629467e05dc!2sAgence%20immobili%C3%A8re%20l'Adresse%20Strasbourg!5e0!3m2!1sfr!2sfr!4v1"
-      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-      title="L'Adresse Strasbourg sur Google Maps">
-    </iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641.5!2d7.7794849!3d48.5861878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28bdbe7a3fa26bd1%3A0x94ad9629467e05dc!2sAgence%20immobili%C3%A8re%20l'Adresse%20Strasbourg!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="L'Adresse Strasbourg sur Google Maps"></iframe>
     <div class="map-bar">
       <span>📍</span>
       <p>22 Rue d'Ypres, 67000 Strasbourg</p>
@@ -692,13 +665,43 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="https://lh3.googleusercontent.com/p/AF1QipN_MTrm1LW1rDzV-IXMSkS_bBiB-ns3ytpcXSTi=s1360-w1360-h1020-rw" alt="l'Adresse" style="height:38px; width:auto; object-fit:contain; filter:brightness(0) invert(1);" /></div>
-  <p>© 2025 · L'immobilier coopératif · 22 Rue d'Ypres, 67000 Strasbourg</p>
-  <div class="footer-links">
-    <a href="tel:+33388315981">03 88 31 59 81</a>
-    <a href="#apropos">L'agence</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+  <div class="footer-top">
+    <div>
+      <img class="footer-logo-img" src="https://lh3.googleusercontent.com/p/AF1QipN_MTrm1LW1rDzV-IXMSkS_bBiB-ns3ytpcXSTi=s1360-w1360-h1020-rw" alt="l'Adresse Strasbourg"/>
+      <p class="footer-desc">Agence immobilière spécialisée en estimation et vente de biens à Strasbourg et dans l'Eurométropole. L'immobilier coopératif.</p>
+      <p class="footer-desc" style="margin-top:0.8rem">22 Rue d'Ypres, 67000 Strasbourg<br>Carte pro : CPI 67012022000000041</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="https://www.monprojetladresse.immo/agence-359/" target="_blank">Estimation gratuite</a>
+      <a href="https://www.ladresse.com/agence/l-adresse-strasbourg/397/acheter" target="_blank">Acheter</a>
+      <a href="https://www.ladresse.com/recherche/location/appartement/strasbourg-67000" target="_blank">Louer</a>
+      <a href="https://www.ladresse.com/simulation-financement" target="_blank">Simuler son financement</a>
+    </div>
+    <div class="footer-col">
+      <h4>Annonces</h4>
+      <a href="https://www.ladresse.com/recherche/achat/appartement/strasbourg-67000" target="_blank">Appartements à vendre</a>
+      <a href="https://www.ladresse.com/recherche/achat/maison/strasbourg-67000" target="_blank">Maisons à vendre</a>
+      <a href="https://www.ladresse.com/recherche/achat/bureaux/strasbourg-67000" target="_blank">Bureaux</a>
+      <a href="https://www.ladresse.com/recherche/achat/terrain/strasbourg-67000" target="_blank">Terrains</a>
+      <a href="https://www.ladresse.com/recherche/achat/local-commercial/strasbourg-67000" target="_blank">Locaux commerciaux</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0388315981">03 88 31 59 81</a>
+      <a href="https://wa.me/33388315981" target="_blank">WhatsApp</a>
+      <a href="https://www.ladresse.com/agence/l-adresse-strasbourg/397/blog" target="_blank">Actualités</a>
+      <a href="https://www.ladresse.com/rejoignez-nous" target="_blank">Nous rejoindre</a>
+      <a href="https://www.ladresse.com/pdf/687672d564621.pdf" target="_blank">Nos honoraires</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 L'Adresse Strasbourg · RCS Strasbourg 918153792 · TVA FR15918153792</p>
+    <div class="footer-legal">
+      <a href="https://www.ladresse.com/pdf/politique-de-confidentialite.pdf" target="_blank">Politique de confidentialité</a>
+      <a href="https://www.ladresse.com/pdf/687672d564621.pdf" target="_blank">Honoraires</a>
+      <a href="https://www.mcca-mediation.fr" target="_blank">Médiation : MCCA</a>
+    </div>
   </div>
 </footer>
 
@@ -710,20 +713,17 @@
 
 <script>
   const obs = new IntersectionObserver(
-    es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.08 }
+    es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.07 }
   );
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.style.height = '56px';
-      nav.style.boxShadow = '0 2px 20px rgba(42,181,181,0.2)';
-    } else {
-      nav.style.height = '68px';
-      nav.style.boxShadow = '0 2px 16px rgba(42,181,181,0.12)';
-    }
+    nav.style.height = window.scrollY > 50 ? '56px' : '68px';
+    nav.style.boxShadow = window.scrollY > 50
+      ? '0 2px 20px rgba(42,181,181,0.2)'
+      : '0 2px 16px rgba(42,181,181,0.12)';
   });
 </script>
 </body>
